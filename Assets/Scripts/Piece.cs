@@ -1,5 +1,4 @@
-//is the individual piece and here logic for i/p,controls,moving and rotating;
-//but we need to communicate back to the game board when the piece is moved and inform it to reset its piece to a new position 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,21 +9,21 @@ public class Piece : MonoBehaviour
     public TetrominoData data { get; private set; }
     public Vector3Int[] cells { get; private set; }
     public Vector3Int position { get; private set; }
-    
+
 
     public float stepDelay = 1f;
     public float lockDelay = 0.5f;
 
     private float stepTime;
-    private float lockTime; 
+    private float lockTime;
 
-    
+
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
     {
         this.board = board;
         this.position = position;
         this.data = data;
-        
+
         this.stepTime = Time.time + this.stepDelay;
         this.lockTime = 0f;
 
@@ -32,26 +31,27 @@ public class Piece : MonoBehaviour
         {
             this.cells = new Vector3Int[data.cells.Length]; //can use even 4
         }
-        for(int i = 0; i < data.cells.Length; i++)
+        for (int i = 0; i < data.cells.Length; i++)
         {
             this.cells[i] = (Vector3Int)data.cells[i];
         }
     }
     private void Update()
     {
+
         this.board.Clear(this);
         this.lockTime += Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Move(Vector2Int.left);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             Move(Vector2Int.right);
         }
-        //soft drop
-        if (Input.GetKeyDown(KeyCode.S))
+
+        // Soft drop
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             Move(Vector2Int.down);
         }
@@ -66,7 +66,7 @@ public class Piece : MonoBehaviour
             Step();
         }
 
-        
+
         this.board.Set(this);
     }
     private void Step()
@@ -75,7 +75,7 @@ public class Piece : MonoBehaviour
 
         Move(Vector2Int.down);
 
-        if(this.lockTime >= this.lockDelay)
+        if (this.lockTime >= this.lockDelay)
         {
             Lock();
         }
@@ -93,9 +93,9 @@ public class Piece : MonoBehaviour
     private void Lock()
     {
         this.board.Set(this);
-      
+
         board.CheckAndClearTiles(this);
-        
+
         this.board.SpawnPiece();
     }
 
@@ -117,3 +117,7 @@ public class Piece : MonoBehaviour
 
 
 }
+
+
+
+

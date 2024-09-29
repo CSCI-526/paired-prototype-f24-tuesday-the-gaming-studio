@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 725e9f84903284368b0692217639f041
+  productGUID: 05f43810e5a06488293b994c68f4528e
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: TetrisRockPaperScissors
+  productName: DemoProjectTRPS
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -586,7 +586,7 @@ PlayerSettings:
   webGLTemplate: APPLICATION:Default
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 0
+  webGLCompressionFormat: 2
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
@@ -630,14 +630,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: TetrisRockPaperScissors
+  metroPackageName: DemoProjectTRPS
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: TetrisRockPaperScissors
+  metroApplicationDescription: DemoProjectTRPS
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -706,10 +706,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: ec94c4cc-afe1-4357-8e32-626b7491abef
+  cloudProjectId: 8f05eb3d-977e-4914-9e16-96b546b8cecc
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: TetrisRockPaperScissors
+  projectName: DemoProjectTRPS
   organizationId: swathir98
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
