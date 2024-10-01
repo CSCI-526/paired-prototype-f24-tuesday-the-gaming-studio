@@ -148,6 +148,7 @@ public class Piece : MonoBehaviour
                 board.CheckAndClearTiles(this, hasTileArray);
             }
         }
+        /*
         for (int i = 0; i < this.cells.Length; i++)
         {
             Vector3Int temp = this.cells[i] + this.position;
@@ -164,6 +165,29 @@ public class Piece : MonoBehaviour
                     this.cells[i].y--;
                     temp.y--;
                     board.CheckAndClearTiles(this, hasTileArray);
+                }
+            }
+        }
+        */
+        for(int i = -9;i < 8;i++)
+        {
+            for(int j = -5;j < 5;j++)
+            {
+                var temp = new Vector3Int(j, i, 0);
+                if (board.tilemap.HasTile(temp) == true &&
+                    board.tilemap.HasTile(temp + new Vector3Int(0, -1, 0)) == false &&
+                    board.tilemap.HasTile(temp + new Vector3Int(1, 0, 0)) == false &&
+                    board.tilemap.HasTile(temp + new Vector3Int(-1, 0, 0)) == false &&
+                    board.tilemap.HasTile(temp + new Vector3Int(1, 0, 0)) == false)
+                {
+                    while (temp.y > -10 && board.tilemap.HasTile(temp) == true &&
+                    board.tilemap.HasTile(temp + new Vector3Int(0, -1, 0)) == false)
+                    {
+                        board.tilemap.SetTile(temp + new Vector3Int(0, -1, 0), board.tilemap.GetTile(temp));
+                        board.tilemap.SetTile(temp, null);
+                        temp.y--;
+                        board.CheckAndClearTiles(this, hasTileArray);
+                    }
                 }
             }
         }
