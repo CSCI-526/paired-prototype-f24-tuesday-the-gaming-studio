@@ -178,7 +178,7 @@ public class Piece : MonoBehaviour
                     board.tilemap.HasTile(temp + new Vector3Int(0, -1, 0)) == false &&
                     board.tilemap.HasTile(temp + new Vector3Int(1, 0, 0)) == false &&
                     board.tilemap.HasTile(temp + new Vector3Int(-1, 0, 0)) == false &&
-                    board.tilemap.HasTile(temp + new Vector3Int(1, 0, 0)) == false)
+                    board.tilemap.HasTile(temp + new Vector3Int(0, 1, 0)) == false)
                 {
                     while (temp.y > -10 && board.tilemap.HasTile(temp) == true &&
                     board.tilemap.HasTile(temp + new Vector3Int(0, -1, 0)) == false)
